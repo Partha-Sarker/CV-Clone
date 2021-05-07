@@ -1,0 +1,73 @@
+body {
+    background-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 65%;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 3em 4em;
+    background-color: white;
+}
+
+.avatar {
+    height: 6em;
+    width: auto;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.icon {
+    height: 1em;
+    width: auto;
+    padding-right: 5px;
+    object-fit: cover;
+}
+
+.identity {
+    display: flex;
+    justify-content: space-between;
+}
+
+.identity * {
+    margin: .2em 0;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.links .link {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+.link span {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+
+/* .cv-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-content {
+    width: 50%;
+}
+
+.right-content {
+    width: 45%;
+} */
