@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: lightgrey;
     font-family: Arial, Helvetica, sans-serif;
@@ -8,12 +13,58 @@ a {
     color: black;
 }
 
+hr {
+    height: 2px;
+    background-color: black;
+    border-color: black;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 6px 0;
+}
+
+h2 {
+    margin: 6px 0;
+}
+
+h3 {
+    margin: 6px 0;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+ul li {
+    margin: .5em 0;
+}
+
+.large-grey {
+    font-size: larger;
+}
+
+.mid-bold {
+    font-size: medium;
+    font-weight: bold;
+    /* margin: .5em 0; */
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .container {
     width: 65%;
     margin: 20px auto;
     border: 1px solid black;
     padding: 3em 4em;
     background-color: white;
+}
+
+.cv-header {
+    margin-bottom: 1em;
 }
 
 .avatar {
@@ -59,7 +110,7 @@ a {
 
 
 
-/* .cv-content {
+.cv-content {
     display: flex;
     justify-content: space-between;
 }
@@ -69,5 +120,18 @@ a {
 }
 
 .right-content {
-    width: 45%;
-} */
+    width: 40%;
+}
+
+.cv-section {
+    margin-bottom: 2em;
+}
+
+.cv-subsection {
+    margin-bottom: 1em;
+}
+
+.university {
+    display: inline-block;
+    margin-bottom: 8px;
+}
