@@ -63,6 +63,7 @@ ul li {
 
 .container {
     width: 65%;
+    max-width: 1000px;
     margin: 20px auto;
     border: 1px solid black;
     padding: 3em 4em;
@@ -155,11 +156,7 @@ ul li {
     margin-bottom: 0;
 }
 
-/* @media screen and (max-width: 1920px) {
-    .cv-content {
-        background-color: aqua;
-    }
-} */
+
 
 @media screen and (max-width: 1600px) {
     /* .cv-content {
