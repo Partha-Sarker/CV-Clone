@@ -37,7 +37,7 @@ ul {
 }
 
 ul li {
-    margin: .5em 0;
+    margin: .3em 0;
 }
 
 .large-grey {
@@ -47,12 +47,18 @@ ul li {
 .mid-bold {
     font-size: medium;
     font-weight: bold;
-    /* margin: .5em 0; */
 }
 
-.flex-between {
+.cv-link {
+    color: deeppink ;
+}
+
+.flex {
     display: flex;
-    justify-content: space-between;
+}
+
+.flex div {
+    flex: 1;
 }
 
 .container {
@@ -70,7 +76,6 @@ ul li {
 .avatar {
     height: 6em;
     width: auto;
-    object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
 }
 
@@ -79,6 +84,12 @@ ul li {
     width: auto;
     padding-right: 5px;
     object-fit: cover;
+    /* image-rendering: -webkit-optimize-contrast; */
+}
+
+.image-text {
+    display: flex;
+    align-items: center;
 }
 
 .identity {
@@ -90,13 +101,13 @@ ul li {
     margin: .2em 0;
 }
 
-.links {
+.links{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-.links .link {
+.links .link{
     display: flex;
     align-items: center;
     margin-right: 20px;
@@ -108,30 +119,75 @@ ul li {
     font-size: 14px;
 }
 
-
-
 .cv-content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .left-content {
-    width: 50%;
+    margin-right: 1.5em;
+    flex: 1.15;
 }
 
 .right-content {
-    width: 40%;
+    margin-left: 1.5em;
+    flex: .85;
 }
 
 .cv-section {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .cv-subsection {
     margin-bottom: 1em;
 }
 
-.university {
-    display: inline-block;
-    margin-bottom: 8px;
+.education-section {
+    margin-bottom: 1em;
+}
+
+.project {
+    margin-bottom: 1.05em;
+}
+
+.project p {
+    margin-bottom: 0;
+}
+
+/* @media screen and (max-width: 1920px) {
+    .cv-content {
+        background-color: aqua;
+    }
+} */
+
+@media screen and (max-width: 1600px) {
+    /* .cv-content {
+        background-color: aquamarine;
+    } */
+
+    .project {
+        margin-bottom: .85em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cv-content {
+        /* background-color: blue; */
+        flex-direction: column;
+    }
+
+    .left-content {
+        margin-right: 0;
+        flex: 1;
+    }
+    
+    .right-content {
+        margin-left: 0;
+        flex: 1;
+    }
+
+    .cv-section {
+        margin-bottom: 2em;
+    }
 }
