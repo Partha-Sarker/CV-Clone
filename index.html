@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/app.js"></script>
     <title>Partha Sarker CV</title>
 </head>
 
@@ -42,11 +44,10 @@
                 </div>
             </div>
 
-            <div
-                class="right-col lg:w-2/3 bg-gray-200 py-5 lg:py-10 px-3 border-4 border-t-0 lg:border-t-4 border-gray-700">
-                <div class="experience">
-                    <div class="header flex mb-1 mb-1">
-                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-6">
+            <div class="right-col lg:w-2/3 bg-gray-200 py-5 lg:py-10 px-3 border-4 border-t-0 lg:border-t-4 border-gray-700">
+                <div class="experience mt-.5 lg:mt-0 mb-10 lg:mb-0">
+                    <div class="header flex mb-1.5 lg:mb-0">
+                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/experience.png" alt="">
                         </div>
                         <div class="title flex-grow mb-1">
@@ -56,9 +57,12 @@
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="institute">
-                            <p class="text-xl font-medium uppercase mb-.5">Junior Software Engineer
-                            </p>
-                            <div class="flex flex-col lg:flex-row flex-col lg:flex-row justify-between">
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">Junior Software Engineer</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <div style="display: none;" class="details flex flex-col lg:flex-row flex-col lg:flex-row justify-between">
                                 <p class="text-xl font-medium text-gray-500 mb-1">Dynamic Solution Innovators(DSi)</p>
                                 <div class="flex">
                                     <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
@@ -70,9 +74,9 @@
                     </div>
                 </div>
 
-                <div class="education mt-5">
-                    <div class="header flex mb-1">
-                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-6">
+                <div class="education mt-5 mb-10 lg:mb-0">
+                    <div class="header flex mb-1.5 lg:mb-0">
+                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/education.png" alt="">
                         </div>
                         <div class="title flex-grow mb-1">
@@ -82,47 +86,63 @@
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="institute">
-                            <p class="text-xl font-medium uppercase mb-.5">B.Sc. Eng. in Computer Science and
-                                Engineering
-                            </p>
-                            <p class="text-xl font-medium text-gray-500 mb-1">Shahjalal University of Science Technology
-                            </p>
-                            <div class="flex flex-col lg:flex-row justify-between">
-                                <p><b>CGPA: </b>3.71 on a scale of 4</p>
-                                <div class="flex">
-                                    <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
-                                    <p class="my-auto mr-2">2017-2021</p>
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">B.Sc. Eng. in Computer Science and Engineering</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <div style="display: none;" class="details">
+                                <p class="text-xl font-medium text-gray-500 mb-1">Shahjalal University of Science Technology</p>
+                                <div class="flex flex-col lg:flex-row justify-between">
+                                    <p><b>CGPA: </b>3.71 on a scale of 4</p>
+                                    <div class="flex">
+                                        <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
+                                        <p class="my-auto mr-2">2017-2021</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="institute mt-3">
-                            <p class="text-xl font-medium uppercase mb-.5">Higher Secondary School Certificate</p>
-                            <p class="text-xl font-medium text-gray-500 mb-1">M.C. College</p>
-                            <div class="flex flex-col lg:flex-row justify-between">
-                                <p><b>CGPA: </b>5 on a scale of 5</p>
-                                <div class="flex">
-                                    <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
-                                    <p class="my-auto mr-2">2017-2021</p>
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">Higher Secondary School Certificate</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <div style="display: none;" class="details">
+                                <p class="text-xl font-medium uppercase"></p>
+                                <p class="text-xl font-medium text-gray-500 mb-1">M.C. College</p>
+                                <div class="flex flex-col lg:flex-row justify-between">
+                                    <p><b>CGPA: </b>5 on a scale of 5</p>
+                                    <div class="flex">
+                                        <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
+                                        <p class="my-auto mr-2">2017-2021</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="institute mt-3">
-                            <p class="text-xl font-medium uppercase mb-.5">Secondary School Certificate</p>
-                            <p class="text-xl font-medium text-gray-500 mb-1">Sylhet Govt. Pilot High School</p>
-                            <div class="flex flex-col lg:flex-row justify-between">
-                                <p><b>CGPA: </b>5 on a scale of 5</p>
-                                <div class="flex">
-                                    <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
-                                    <p class="my-auto mr-2">2017-2021</p>
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">Secondary School Certificate</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <div style="display: none;" class="details">
+                                <p class="text-xl font-medium text-gray-500 mb-1">Sylhet Govt. Pilot High School</p>
+                                <div class="flex flex-col lg:flex-row justify-between">
+                                    <p><b>CGPA: </b>5 on a scale of 5</p>
+                                    <div class="flex">
+                                        <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
+                                        <p class="my-auto mr-2">2017-2021</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills mt-5">
-                    <div class="header flex mb-1">
-                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-6">
+                <div class="skills mt-5 mb-10 lg:mb-0">
+                    <div class="header flex mb-1.5 lg:mb-0">
+                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/skill.png" alt="">
                         </div>
                         <div class="title flex-grow mb-1">
@@ -132,24 +152,36 @@
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="skill-type">
-                            <p class="text-xl font-medium uppercase">Programming Languages</p>
-                            <p>Structured C/C++, Java, Python, C#, Basic SQL</p>
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">Programming Languages</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <p style="display: none;">Structured C/C++, Java, Python, C#, Basic SQL</p>
                         </div>
                         <div class="skill-type mt-3">
-                            <p class="text-xl font-medium uppercase">Tools</p>
-                            <p>Unity, Android Studio</p>
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">Tools</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <p style="display: none;">Unity, Android Studio</p>
                         </div>
                         <div class="skill-type mt-3">
-                            <p class="text-xl font-medium uppercase">Framework and Libraries</p>
-                            <p>Laravel, jQuery, Ajax, Bootstrap, JavaFX, OpenCV, git</p>
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium uppercase">Framework and Libraries</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <p style="display: none;">Laravel, jQuery, Ajax, Bootstrap, JavaFX, OpenCV, git</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="projects mt-5">
-                    <div class="header flex mb-1">
-                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-6">
-                            <img class="w-full h-auto" src="images/project.png" alt="">
+                <div class="projects mt-5 mb-10 lg:mb-0">
+                    <div class="header flex mb-1.5 lg:mb-0">
+                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
+                            <img class="w-full h-auto" src="images/project_2.png" alt="">
                         </div>
                         <div class="title flex-grow mb-1">
                             <p class="text-3xl font-medium uppercase">Projects</p>
@@ -158,56 +190,70 @@
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="project">
-                            <a class="text-xl font-medium" target="_blank"
-                                href="https://github.com/diptodeydip/App_Usage_Tracker">App Usage Monitor</a>
-                            <ul class="list-disc list-inside">
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium" >App Usage Monitor</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <ul class="list-disc list-inside" style="display: none">
                                 <li>Tracks, collects, visualizes android app usage statistics. Also, one can set daily
                                     and weekly usage targets for individual apps and get notified about their usage.
                                 </li>
-                                <li>Android Studio, Java, Firebase</li>
+                                <li>Android Studio, Java, Firebase <a class="font-bold" target="_blank" href="https://github.com/diptodeydip/App_Usage_Tracker">[Github Link]</a></li>
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <a class="text-xl font-medium" target="_blank"
-                                href="https://github.com/Partha-Sarker/Bangla-handwritten-word-segmentation-from-document">Word
-                                Segmentation</a>
-                            <ul class="list-disc list-inside">
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium" >Word Segmentation</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <ul class="list-disc list-inside" style="display: none">
                                 <li>Segments Bengali handwritten document into words.</li>
-                                <li>Python, OpenCV</li>
+                                <li>Python, OpenCV <a class="font-bold" target="_blank" href="https://github.com/Partha-Sarker/Bangla-handwritten-word-segmentation-from-document">[Github Link]</a></li>
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <a class="text-xl font-medium" target="_blank"
-                                href="https://github.com/Partha-Sarker/Fighting-Game-3d-Multiplayer-Unity3d">Fight</a>
-                            <ul class="list-disc list-inside">
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium">Fight</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <ul class="list-disc list-inside" style="display: none">
                                 <li>3d, 1v1, third person multiplayer game for android and windows.</li>
-                                <li>Unity, C#</li>
+                                <li>Unity, C# <a class="font-bold" target="_blank" href="https://github.com/Partha-Sarker/Fighting-Game-3d-Multiplayer-Unity3d">[Github Link]</a></li>
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <a class="text-xl font-medium" target="_blank"
-                                href="https://github.com/Partha-Sarker/Shikha">Shikha</a>
-                            <ul class="list-disc list-inside">
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium">Shikha</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <ul class="list-disc list-inside" style="display: none">
                                 <li>Implemented java socket programming for chatting and sharing text files over the
                                     same WiFi network.</li>
-                                <li>Android Studio, Java</li>
+                                <li>Android Studio, Java <a class="font-bold" target="_blank" href="https://github.com/Partha-Sarker/Shikha">[Github Link]</a></li>
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <a class="text-xl font-medium" target="_blank"
-                                href="https://github.com/Partha-Sarker/Peer-2-Peer-messaging-app">P2P Messaging app</a>
-                            <ul class="list-disc list-inside">
+                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                                <p class="flex-grow text-xl font-medium">P2P Messaging app</p>
+                                <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                                <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                            </div>
+                            <ul class="list-disc list-inside" style="display: none">
                                 <li>Small 2d story-adventure game about a village girl running away from the kidnappers.
                                 </li>
-                                <li>Unity, C#</li>
+                                <li>Unity, C# <a class="font-bold" target="_blank" href="https://github.com/Partha-Sarker/Peer-2-Peer-messaging-app">[Github Link]</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="hobbies mt-5">
-                    <div class="header flex mb-1">
-                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-6">
+                <!-- <div class="hobbies mt-5 mb-10 lg:mb-0">
+                    <div class="header flex mb-1.5 lg:mb-0">
+                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/hobby.png" alt="">
                         </div>
                         <div class="title flex-grow mb-1">
@@ -225,7 +271,37 @@
                             <li>Playing video games.</li>
                         </ul>
                     </div>
+                </div> -->
+
+                <div class="thesis mt-5 mb-10 lg:mb-0">
+                    <div class="header flex mb-1.5 lg:mb-0">
+                        <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
+                            <img class="w-full h-auto" src="images/thesis.png" alt="">
+                        </div>
+                        <div class="title flex-grow mb-1">
+                            <p class="text-3xl font-medium uppercase">Thesis</p>
+                            <div class="h-1 bg-black mt-1"></div>
+                        </div>
+                    </div>
+                    <div class="content ml-2 lg:ml-20">
+                        <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <p class="flex-grow text-xl font-medium">Non-restrictive intervention approach for handling excessive smartphone usage</p>
+                            <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
+                            <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
+                        </div>
+                        <ul class="list-disc list-inside" style="display: none;">
+                            <li>Study and design of <a class="font-bold" target="_blank" href="https://github.com/diptodeydip/App_Usage_Tracker">
+                                App Usage Monitor
+                            </a>. An android app aiming to mitigate smartphone overuse.
+                            </li>
+                            <li>Falls under the Human Computer Interaction(HCI) category.</li>
+                            <li>Conducted an online survey to learn smartphone usage behaviour among individuals.</li>
+                            <li>Designed a three week experiment for collecting smartphone usage data and validating the
+                                effectiveness of non-restrictive intervention method</li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
