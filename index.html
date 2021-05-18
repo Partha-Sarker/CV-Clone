@@ -7,38 +7,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
     <title>Partha Sarker CV</title>
 </head>
 
 <body>
+    <div id="weather" style="display: none;" class="fixed pointer-events-none w-full bottom-2 lg:bottom-10">
+        <div class="weather-container bg-gray-300 mx-5 lg:mx-auto lg:w-3/5 rounded-lg border-2 border-gray-500 p-2 lg:p-5">
+            <div class="flex">
+                <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
+                    <img class="w-full h-auto" src="images/weather.png" alt="">
+                </div>
+                <div class="title flex-grow">
+                    <p class="text-3xl font-medium uppercase">Weather</p>
+                    <div class="h-1 bg-black mt-1"></div>
+                </div>
+            </div>
+            <div class="content ml-2 mt-2">
+                <p class="text-2xl font-medium text-center animate-pulse">Weather in Sylhet</p>
+                <div class="weather-item flex lg:flex-row my-2 shadow-md lg:px-3">
+                    <p class="text-2xl flex-grow font-medium">Temperature</p>
+                    <p id="current_temp" class="text-2xl font-medium my-auto">loading</p>
+                </div>
+                <div class="weather-item flex lg:flex-row my-2 shadow-md lg:px-3">
+                    <p class="text-2xl flex-grow font-medium">Feels Like</p>
+                    <p id="feeling_temp" class="text-2xl font-medium my-auto">loading</p>
+                </div>
+                <div class="weather-item flex lg:flex-row my-2 shadow-md lg:px-3">
+                    <p class="text-2xl flex-grow font-medium">Humidity</p>
+                    <p id="humidity" class=" text-2xl font-medium my-auto">loading</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="cv-container max-w-screen-lg mx-auto">
         <div class="lg:flex m-2">
             <div class="left-col lg:w-1/3 bg-gray-700 flex flex-col justify-center py-10">
                 <div class="photo-designation w-full">
                     <img class="w-4/5 rounded-full border-4 mx-auto lg:mb-8" src="images/photo_square_2.jpg" alt="">
-                    <p class="text-5xl text-white text-center font-semibold tracking-widest mt-2 uppercase">Partha</p>
-                    <p class="text-5xl text-gray-100 text-center tracking-wide uppercase">Sarker</p>
-                    <p class="text-xl text-gray-300 text-center mt-4 lg:mt-8 uppercase">Junior Software Engineer</p>
+                    <p class="text-5xl breaks-word text-white text-center font-semibold tracking-widest mt-2 uppercase">Partha</p>
+                    <p class="text-5xl breaks-word text-gray-100 text-center tracking-wide uppercase">Sarker</p>
+                    <p class="text-xl breaks-word text-gray-300 text-center mt-4 lg:mt-8 uppercase">Junior Software Engineer</p>
                 </div>
                 <div class="contact-me w-4/5 mx-auto mt-10 lg:mt-24 lg:pb-32">
                     <div class="flex">
-                        <img class="w-7 h-7 my-auto mr-2" src="images/location_white.png" alt="">
-                        <a class="text-gray-300 my-auto mr-2" target="_blank"
+                        <img class="w-7 h-7 my-auto" src="images/location_white.png" alt="">
+                        <a id="location" class="text-lg breaks-word flex-grow text-gray-300 my-auto pl-2 lg:transition lg:rounded-md lg:duration-300 lg:ease-in-out lg:hover:bg-gray-800 lg:hover:shadow-lg" target="_blank"
                             href="https://www.google.com/maps/place/Lamabazar,+Sylhet">Lamabazar, Sylhet, Bangladesh</a>
                     </div>
                     <div class="flex mt-5">
-                        <img class="w-7 h-7 my-auto mr-2" src="images/email_white.png" alt="">
-                        <a class="text-gray-300 my-auto mr-2"
+                        <img class="w-7 h-7 my-auto" src="images/email_white.png" alt="">
+                        <a class="text-lg breaks-word flex-grow text-gray-300 my-auto pl-2 lg:transition lg:rounded-md lg:duration-300 lg:ease-in-out lg:hover:bg-gray-800 lg:hover:shadow-lg"
                             href="mailto: parthasarker3@gmail.com">parthasarker3@gmail.com</a>
                     </div>
                     <div class="flex mt-5">
-                        <img class="w-7 h-7 my-auto mr-2" src="images/call_white.png" alt="">
-                        <a class="text-gray-300 my-auto mr-2" href="tel:+8801521428057">+8801521428057</a>
+                        <img class="w-7 h-7 my-auto" src="images/call_white.png" alt="">
+                        <a class="text-lg breaks-word flex-grow text-gray-300 my-auto pl-2 lg:transition lg:rounded-md lg:duration-300 lg:ease-in-out lg:hover:bg-gray-800 lg:hover:shadow-lg" href="tel:+8801521428057">+8801521428057</a>
                     </div>
                     <div class="flex mt-5">
-                        <img class="w-7 h-7 my-auto mr-2" src="images/github_white.png" alt="">
-                        <a class="text-gray-300 my-auto mr-2" target="_blank"
+                        <img class="w-7 h-7 my-auto" src="images/github_white.png" alt="">
+                        <a class="text-lg breaks-word flex-grow text-gray-300 my-auto pl-2 lg:transition lg:rounded-md lg:duration-300 lg:ease-in-out lg:hover:bg-gray-800 lg:hover:shadow-lg" target="_blank"
                             href="https://github.com/Partha-Sarker">https://github.com/Partha-Sarker</a>
                     </div>
                 </div>
@@ -50,14 +80,14 @@
                         <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/experience.png" alt="">
                         </div>
-                        <div class="title flex-grow mb-1">
+                        <div class="title flex-grow">
                             <p class="text-3xl font-medium uppercase">Experience</p>
                             <div class="h-1 bg-black mt-1"></div>
                         </div>
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="institute">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">Junior Software Engineer</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -70,7 +100,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -79,14 +108,14 @@
                         <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/education.png" alt="">
                         </div>
-                        <div class="title flex-grow mb-1">
+                        <div class="title flex-grow">
                             <p class="text-3xl font-medium uppercase">Education</p>
                             <div class="h-1 bg-black mt-1"></div>
                         </div>
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="institute">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">B.Sc. Eng. in Computer Science and Engineering</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -97,13 +126,13 @@
                                     <p><b>CGPA: </b>3.71 on a scale of 4</p>
                                     <div class="flex">
                                         <img class="w-5 h-5 my-auto mr-1.5" src="images/time_range.png" alt="">
-                                        <p class="my-auto mr-2">2017-2021</p>
+                                        <p class="my-auto mr-2">2017-Present</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="institute mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">Higher Secondary School Certificate</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -121,7 +150,7 @@
                             </div>
                         </div>
                         <div class="institute mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">Secondary School Certificate</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -145,14 +174,14 @@
                         <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/skill.png" alt="">
                         </div>
-                        <div class="title flex-grow mb-1">
+                        <div class="title flex-grow">
                             <p class="text-3xl font-medium uppercase">Skills</p>
                             <div class="h-1 bg-black mt-1"></div>
                         </div>
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="skill-type">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">Programming Languages</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -160,7 +189,7 @@
                             <p style="display: none;">Structured C/C++, Java, Python, C#, Basic SQL</p>
                         </div>
                         <div class="skill-type mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">Tools</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -168,7 +197,7 @@
                             <p style="display: none;">Unity, Android Studio</p>
                         </div>
                         <div class="skill-type mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium uppercase">Framework and Libraries</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -183,14 +212,14 @@
                         <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/project_2.png" alt="">
                         </div>
-                        <div class="title flex-grow mb-1">
+                        <div class="title flex-grow">
                             <p class="text-3xl font-medium uppercase">Projects</p>
                             <div class="h-1 bg-black mt-1"></div>
                         </div>
                     </div>
                     <div class="content ml-2 lg:ml-20">
                         <div class="project">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium" >App Usage Monitor</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -203,7 +232,7 @@
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium" >Word Segmentation</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -214,7 +243,7 @@
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium">Fight</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -225,7 +254,7 @@
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium">Shikha</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -237,7 +266,7 @@
                             </ul>
                         </div>
                         <div class="project mt-3">
-                            <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                            <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                                 <p class="flex-grow text-xl font-medium">P2P Messaging app</p>
                                 <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                                 <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
@@ -256,7 +285,7 @@
                         <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/hobby.png" alt="">
                         </div>
-                        <div class="title flex-grow mb-1">
+                        <div class="title flex-grow">
                             <p class="text-3xl font-medium uppercase">Hobbies</p>
                             <div class="h-1 bg-black mt-1"></div>
                         </div>
@@ -278,13 +307,13 @@
                         <div class="icon w-14 h-14 rounded-full border-2 border-gray-500 p-2.5 mr-2 lg:mr-6">
                             <img class="w-full h-auto" src="images/thesis.png" alt="">
                         </div>
-                        <div class="title flex-grow mb-1">
+                        <div class="title flex-grow">
                             <p class="text-3xl font-medium uppercase">Thesis</p>
                             <div class="h-1 bg-black mt-1"></div>
                         </div>
                     </div>
                     <div class="content ml-2 lg:ml-20">
-                        <div class="headline flex cursor-pointer lg:hover:bg-gray-300 mb-.5">
+                        <div class="headline flex cursor-pointer lg:transition lg:duration-300 lg:ease-in-out lg:rounded-md lg:hover:bg-gray-300 lg:hover:shadow-md mb-.5">
                             <p class="flex-grow text-xl font-medium">Non-restrictive intervention approach for handling excessive smartphone usage</p>
                             <img class="collapse w-5 h-5 my-auto mr-1.5" style="display: none;" src="images/collapse.png">
                             <img class="expand w-5 h-5 my-auto mr-1.5" src="images/expand.png">
